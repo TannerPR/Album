@@ -90,6 +90,52 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &593092480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 593092482}
+  - 114: {fileID: 593092481}
+  m_Layer: 0
+  m_Name: SceneLogic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &593092481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593092480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740764a473555664592fe4e6a53cd1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 1
+  cubeArr:
+  - {fileID: 1149399980}
+  - {fileID: 1378749945}
+  - {fileID: 2081185999}
+  - {fileID: 1069256707}
+--- !u!4 &593092482
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593092480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &662767066
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +297,7 @@ GameObject:
   - 33: {fileID: 1069256710}
   - 65: {fileID: 1069256709}
   - 23: {fileID: 1069256708}
+  - 114: {fileID: 1069256712}
   m_Layer: 0
   m_Name: Cube4
   m_TagString: Untagged
@@ -319,6 +366,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &1069256712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069256707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c030a7e0f6b4f4b8855c637e7872d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseActive: 0
 --- !u!1 &1149399980
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +389,7 @@ GameObject:
   - 33: {fileID: 1149399983}
   - 65: {fileID: 1149399982}
   - 23: {fileID: 1149399981}
+  - 114: {fileID: 1149399985}
   m_Layer: 0
   m_Name: Cube1
   m_TagString: Untagged
@@ -398,6 +458,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &1149399985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149399980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c030a7e0f6b4f4b8855c637e7872d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseActive: 0
 --- !u!1 &1378749945
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +481,7 @@ GameObject:
   - 33: {fileID: 1378749948}
   - 65: {fileID: 1378749947}
   - 23: {fileID: 1378749946}
+  - 114: {fileID: 1378749950}
   m_Layer: 0
   m_Name: Cube2
   m_TagString: Untagged
@@ -477,6 +550,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1378749950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1378749945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c030a7e0f6b4f4b8855c637e7872d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseActive: 0
 --- !u!1 &2081185999
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +573,7 @@ GameObject:
   - 33: {fileID: 2081186002}
   - 65: {fileID: 2081186001}
   - 23: {fileID: 2081186000}
+  - 114: {fileID: 2081186004}
   m_Layer: 0
   m_Name: Cube3
   m_TagString: Untagged
@@ -556,3 +642,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &2081186004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2081185999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c030a7e0f6b4f4b8855c637e7872d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseActive: 0

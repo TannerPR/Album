@@ -19,12 +19,14 @@ public class SimonSays : MonoBehaviour
 
         // Pattern Creation
         if (!createdOnce)
+        {
             CreatePattern(cubeArr.Length, difficulty);
-        Debug.Log(pattern.Length + " digit pattern is "
-                                  + pattern[0] + ", "
-                                  + pattern[1] + ", "
-                                  + pattern[2] + ", "
-                                  + pattern[3]);
+            Debug.Log(pattern.Length + " digit pattern is "
+                                      + pattern[0] + ", "
+                                      + pattern[1] + ", "
+                                      + pattern[2] + ", "
+                                      + pattern[3]);
+        }
         // Player Observation
         PatternPlayback(difficulty);
 

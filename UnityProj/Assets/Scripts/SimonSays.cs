@@ -101,6 +101,8 @@ public class SimonSays : MonoBehaviour
     // Private global vars
     int[] pattern;
     bool createdOnce = false;
+
+    // Other scripts communicated with
     Pulse pulseInstance;
 
     // Private global vars for pattern playback

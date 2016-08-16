@@ -10,6 +10,7 @@ public class SimonSays : MonoBehaviour
     void Start()
     {
         counter = 0;
+        
     }
 
     // Update is called once per frame
@@ -56,14 +57,14 @@ public class SimonSays : MonoBehaviour
     /// Highlight the cubes in the order set by "PatternCreate"
     /// at desired speed
     /// </summary>
-    void PatternPlayback(float speed)
+    void PatternPlayback(float difficultyBasedSpeed)
     {
         //for (int i = 0; i < pattern.Length; i++) 
         if (counter > pattern.Length) counter = 0;
         timer += Time.deltaTime;
         Debug.Log(counter);
 
-        if (timer > 4.0f)
+        if (timer > difficultyBasedSpeed)
         {
             timer = 0;
             switch (counter)
@@ -95,7 +96,12 @@ public class SimonSays : MonoBehaviour
 
     void UserTurn()
     {
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
+        if (Physics.Raycast(Input.mousePosition, fwd, 10))
+        {
+            Debug.DrawRay(Input.mousePosition, fwd);
+        }
     }
 
     // Private global vars
@@ -108,4 +114,11 @@ public class SimonSays : MonoBehaviour
     // Private global vars for pattern playback
     int counter;
     float timer;
+
+    enum SimonSaysState
+    {
+        e_PATTERN_CREATE,
+        e_PATTERN_PLAYBACK,
+        e_USER_TURN
+    }
 }

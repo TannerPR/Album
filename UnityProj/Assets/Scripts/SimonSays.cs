@@ -10,29 +10,27 @@ public class SimonSays : MonoBehaviour
     void Start()
     {
         counter = 0;
-        
+        simonState = SimonSaysState.e_PATTERN_CREATE;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float time = Time.time;
-
-        // Pattern Creation
-        if (!createdOnce)
+        switch(simonState)
         {
-            CreatePattern(cubeArr.Length, difficulty);
-            Debug.Log(pattern.Length + " digit pattern is "
-                                      + pattern[0] + ", "
-                                      + pattern[1] + ", "
-                                      + pattern[2] + ", "
-                                      + pattern[3]);
-        }
-        // Player Observation
-        PatternPlayback(difficulty);
+            case SimonSaysState.e_PATTERN_CREATE:
+                CreatePattern(cubeArr.Length, difficulty);
+                Debug.Log(pattern.Length + " digit pattern is " + pattern[0] + ", " + pattern[1] + ", " + pattern[2] + ", " + pattern[3]);
+                break;
 
-        // Player Input
-        UserTurn();
+            case SimonSaysState.e_PATTERN_PLAYBACK:
+                PatternPlayback(difficulty);
+                break;
+
+            case SimonSaysState.e_USER_TURN:
+                UserTurn();
+                break;
+        }
     }
 
     /// <summary>
@@ -50,7 +48,7 @@ public class SimonSays : MonoBehaviour
         for (int i = 0; i < patternLength; i++)
             pattern[i] = Random.Range(0, buttonRange);
 
-        createdOnce = true;
+        simonState = SimonSaysState.e_PATTERN_PLAYBACK;
     }
 
     /// <summary>
@@ -92,6 +90,7 @@ public class SimonSays : MonoBehaviour
                     break;
             }
         }
+        simonState = SimonSaysState.e_USER_TURN;
     }
 
     void UserTurn()
@@ -106,7 +105,6 @@ public class SimonSays : MonoBehaviour
 
     // Private global vars
     int[] pattern;
-    bool createdOnce = false;
 
     // Other scripts communicated with
     Pulse pulseInstance;
@@ -121,4 +119,6 @@ public class SimonSays : MonoBehaviour
         e_PATTERN_PLAYBACK,
         e_USER_TURN
     }
+
+    SimonSaysState simonState;
 }

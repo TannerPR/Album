@@ -16,6 +16,7 @@ public class SimonSays : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(simonState);
         switch(simonState)
         {
             case SimonSaysState.e_PATTERN_CREATE:

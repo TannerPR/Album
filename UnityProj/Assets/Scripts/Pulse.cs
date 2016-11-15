@@ -22,13 +22,7 @@ public class Pulse : MonoBehaviour
     {
         if (pulseActive)
         {
-            //for (int i = 0; i < 60; i++) 
-            //{
-            // Don't always need a member var for time, just use Time.Time
-            //size.x = Mathf.Sin (Time.time) * i / 60;
-            //size.y = Mathf.Sin (Time.time) * i / 60;
-            //size.z = Mathf.Sin (Time.time) * i / 60;
-
+			Debug.Log (this.name + " is pulsing");
             size.x = pulseSize;
             size.y = pulseSize;
             size.z = pulseSize;
